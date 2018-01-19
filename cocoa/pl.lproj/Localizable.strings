@@ -1,0 +1,17 @@
+/*
+ Localization.strings
+ cocoa
+ 
+ Created by Student on 19/01/18.
+ Copyright © 2018 KIS AGH. All rights reserved.
+ */
+
+"messages"="Wiadomości";
+"says"="mówi";
+"ago"="minut temu";
+"new"="Nowa wiadomość";
+"info"="Proszę podaj Twoje imię i wiadomość";
+"name"="Twoje imię";
+"message"="Wiadomość";
+"cancel"="Anuluj";
+"send"="Wyślij";

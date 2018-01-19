@@ -1,3 +1,11 @@
+/*
+ Localization.strings
+ cocoa
+ 
+ Created by Student on 19/01/18.
+ Copyright © 2018 KIS AGH. All rights reserved.
+ */
+
 "messages"="Messages";
 "says"="says";
 "ago"="minutes ago";

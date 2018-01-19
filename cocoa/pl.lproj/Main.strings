@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "OBR-qV-syy"; */
+"OBR-qV-syy.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "CocoMessages"; ObjectID = "kCq-5S-8fh"; */
+"kCq-5S-8fh.title" = "Wiadomo";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "xfS-BI-bYI"; */
+"xfS-BI-bYI.text" = "Subtitle";

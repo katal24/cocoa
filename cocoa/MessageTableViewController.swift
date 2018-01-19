@@ -51,8 +51,6 @@ class MessageTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-
-        
         return 1
     }
 
@@ -66,21 +64,21 @@ class MessageTableViewController: UITableViewController {
     }
 
     @IBAction func addMessage(_ sender: Any) {
-        let alertController = UIAlertController(title: self.localizedString(forKey: "new"), message: self.localizedString(forKey: "info"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("new", comment: ""), message: NSLocalizedString("info", comment: ""), preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = self.localizedString(forKey: "name")
+            textField.placeholder = NSLocalizedString("name", comment: "")
         } )
         alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = self.localizedString(forKey: "message")
+            textField.placeholder = NSLocalizedString("message", comment: "")
         } )
-        let sendAction = UIAlertAction(title: "Send", style: .default, handler: { action in
+        let sendAction = UIAlertAction(title: self.localizedString(forKey: "send"), style: .default, handler: { action in
             let name = alertController.textFields?[0].text
             let message = alertController.textFields?[1].text
             
             self.postMessage(name: name!, message: message!)
         })
         alertController.addAction(sendAction)
-        let cancelAction = UIAlertAction(title: self.localizedString(forKey: "cancel"), style: .cancel, handler: { _ in })
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: { _ in })
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: { _ in })
     }
@@ -90,11 +88,9 @@ class MessageTableViewController: UITableViewController {
             response in
             switch response.result {
             case .success:
-                print(response)
                 self.getMessages()
                 break
             case .failure(let error):
-                
                 print(error)
             }
         }
@@ -102,7 +98,6 @@ class MessageTableViewController: UITableViewController {
     
     
     func getMessages(){
-
         Alamofire.request(urlString)
             .responseJSON { response in
                 self.msgs = []
@@ -127,17 +122,17 @@ class MessageTableViewController: UITableViewController {
         let diffTime = NSDate().timeIntervalSince(msgs[indexPath.row].timestamp)/60
         
         if(diffTime <= 200) {
-            cell?.msgTime.text = String(Int(diffTime)) + " "+self.localizedString(forKey: "ago");
+            cell?.msgTime.text = String(Int(diffTime)) + " "+NSLocalizedString("ago", comment: "");
         } else {
             let timeString = String(describing: msgs[indexPath.row].timestamp);
             cell?.msgTime.text = timeString.substring(to: timeString.index(timeString.startIndex, offsetBy: 19))
         }
         
-        cell?.msgText.text = msgs[indexPath.row].name! + " "+self.localizedString(forKey: "says")+": " + msgs[indexPath.row].message!
+        cell?.msgText.text = msgs[indexPath.row].name! + " "+self.localizedString(forKey:"says")+": " + msgs[indexPath.row].message!
         
         return cell!
     }
-    
+
     func localizedString(forKey key: String) -> String {
         var result = Bundle.main.localizedString(forKey: key, value: nil, table: nil)
         
@@ -147,7 +142,6 @@ class MessageTableViewController: UITableViewController {
         
         return result
     }
- 
 
     /*
     // Override to support conditional editing of the table view.
