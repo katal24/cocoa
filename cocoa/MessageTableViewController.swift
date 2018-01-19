@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class MessageTableViewController: UITableViewController {
 
+    var msgs = [Message]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        initMessages();
+        getMessages();
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,25 +34,49 @@ class MessageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return msgs.count
+    }
+    
+    func initMessages(){
+        
+    }
+
+    @IBAction func addMessage(_ sender: Any) {
+        
     }
     
     
-
-    /*
+    func getMessages(){
+        Alamofire.request("https://home.agh.edu.pl/~ernst/shoutbox.php?secret=ams2017")
+            .responseJSON { response in
+                
+                if let object = response.result.value as? [String:[Any]], let messages = object["entries"] as? [[String: Any]]{
+                    
+                    for msg in messages {
+                        self.msgs.append(Message(time: msg["timestamp"] as! String, nam: msg["name"] as! String, msg: msg["message"] as! String ))
+                    }
+                    
+                    self.msgs.sort{$0.timestamp > $1.timestamp}
+                    self.tableView.reloadData();
+                }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageTableViewCell", for: indexPath) as? MessageTableViewCell
+        
+        let timeString = String(describing: msgs[indexPath.row].timestamp);
+        cell?.msgTime.text = timeString.substring(to: timeString.index(timeString.startIndex, offsetBy: 19))
+        cell?.msgText.text = msgs[indexPath.row].message
+        
+        return cell!
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

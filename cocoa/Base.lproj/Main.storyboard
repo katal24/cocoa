@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="OBR-qV-syy" detailTextLabel="xfS-BI-bYI" style="IBUITableViewCellStyleSubtitle" id="UaJ-Fg-Sog" customClass="MessageTableViewCell" customModule="cocoa" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageTableViewCell" textLabel="OBR-qV-syy" detailTextLabel="xfS-BI-bYI" style="IBUITableViewCellStyleSubtitle" id="UaJ-Fg-Sog" customClass="MessageTableViewCell" customModule="cocoa" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UaJ-Fg-Sog" id="7qJ-MT-8so">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OBR-qV-syy">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xfS-BI-bYI">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -41,6 +41,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="msgText" destination="xfS-BI-bYI" id="LsT-yB-nYo"/>
+                                    <outlet property="msgTime" destination="OBR-qV-syy" id="jCF-v4-tK9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,7 +52,13 @@
                             <outlet property="delegate" destination="La4-nC-RxU" id="M5r-0C-pRb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Messages" id="kCq-5S-8fh"/>
+                    <navigationItem key="navigationItem" title="Messages" id="kCq-5S-8fh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u5S-C5-9cO">
+                            <connections>
+                                <action selector="addMessage:" destination="La4-nC-RxU" id="GSn-AV-6oc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5w-h7-wOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,20 @@ import Foundation
 
 class Message {
     
-    var author: String?
-    var text: String?
+    var timestamp: Date
+    var message: String?
+    var name: String?
     
-    func setText(mess : String){
-        text = mess
+    init(time: String, nam: String, msg: String) {
+        
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let datetime = dateFormate.date(from: time)
+        
+        timestamp = datetime!
+        message = msg
+        name = nam
+        print(datetime ?? "aaa")
     }
+    
 }
