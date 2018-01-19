@@ -14,6 +14,7 @@
 		3FC910512012395C0030AA12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9104F2012395C0030AA12 /* LaunchScreen.storyboard */; };
 		3FC9105920123F740030AA12 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9105820123F740030AA12 /* MessageTableViewCell.swift */; };
 		3FC9105B2012404F0030AA12 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9105A2012404F0030AA12 /* MessageTableViewController.swift */; };
+		3FC9105D201244220030AA12 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9105C201244220030AA12 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3FC910522012395C0030AA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC9105820123F740030AA12 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		3FC9105A2012404F0030AA12 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		3FC9105C201244220030AA12 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3FC910462012395C0030AA12 /* AppDelegate.swift */,
 				3FC910482012395C0030AA12 /* ViewController.swift */,
 				3FC9104A2012395C0030AA12 /* Main.storyboard */,
+				3FC9105C201244220030AA12 /* Message.swift */,
 				3FC9105A2012404F0030AA12 /* MessageTableViewController.swift */,
 				3FC9104D2012395C0030AA12 /* Assets.xcassets */,
 				3FC9104F2012395C0030AA12 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				3FC910492012395C0030AA12 /* ViewController.swift in Sources */,
 				3FC910472012395C0030AA12 /* AppDelegate.swift in Sources */,
+				3FC9105D201244220030AA12 /* Message.swift in Sources */,
 				3FC9105B2012404F0030AA12 /* MessageTableViewController.swift in Sources */,
 				3FC9105920123F740030AA12 /* MessageTableViewCell.swift in Sources */,
 			);
