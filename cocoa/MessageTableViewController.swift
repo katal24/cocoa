@@ -66,12 +66,12 @@ class MessageTableViewController: UITableViewController {
     }
 
     @IBAction func addMessage(_ sender: Any) {
-        let alertController = UIAlertController(title: "New message", message: "Please state your name and message", preferredStyle: .alert)
+        let alertController = UIAlertController(title: self.localizedString(forKey: "new"), message: self.localizedString(forKey: "info"), preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Your name"
+            textField.placeholder = self.localizedString(forKey: "name")
         } )
         alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Your message"
+            textField.placeholder = self.localizedString(forKey: "message")
         } )
         let sendAction = UIAlertAction(title: "Send", style: .default, handler: { action in
             let name = alertController.textFields?[0].text
@@ -80,7 +80,7 @@ class MessageTableViewController: UITableViewController {
             self.postMessage(name: name!, message: message!)
         })
         alertController.addAction(sendAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in })
+        let cancelAction = UIAlertAction(title: self.localizedString(forKey: "cancel"), style: .cancel, handler: { _ in })
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: { _ in })
     }
@@ -102,7 +102,7 @@ class MessageTableViewController: UITableViewController {
     
     
     func getMessages(){
-      //  self.msgs = []
+
         Alamofire.request(urlString)
             .responseJSON { response in
                 self.msgs = []
@@ -127,15 +127,25 @@ class MessageTableViewController: UITableViewController {
         let diffTime = NSDate().timeIntervalSince(msgs[indexPath.row].timestamp)/60
         
         if(diffTime <= 200) {
-            cell?.msgTime.text = String(Int(diffTime)) + " minutes ago";
+            cell?.msgTime.text = String(Int(diffTime)) + " "+self.localizedString(forKey: "ago");
         } else {
             let timeString = String(describing: msgs[indexPath.row].timestamp);
             cell?.msgTime.text = timeString.substring(to: timeString.index(timeString.startIndex, offsetBy: 19))
         }
         
-        cell?.msgText.text = msgs[indexPath.row].name! + " says: " + msgs[indexPath.row].message!
+        cell?.msgText.text = msgs[indexPath.row].name! + " "+self.localizedString(forKey: "says")+": " + msgs[indexPath.row].message!
         
         return cell!
+    }
+    
+    func localizedString(forKey key: String) -> String {
+        var result = Bundle.main.localizedString(forKey: key, value: nil, table: nil)
+        
+        if result == key {
+            result = Bundle.main.localizedString(forKey: key, value: nil, table: "Default")
+        }
+        
+        return result
     }
  
 

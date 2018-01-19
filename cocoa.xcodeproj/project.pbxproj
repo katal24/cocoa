@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F375FB32012804300DE9D16 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F375FB52012804300DE9D16 /* Localization.strings */; };
 		3FC910472012395C0030AA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC910462012395C0030AA12 /* AppDelegate.swift */; };
 		3FC910492012395C0030AA12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC910482012395C0030AA12 /* ViewController.swift */; };
 		3FC9104C2012395C0030AA12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9104A2012395C0030AA12 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		1ABD6013AF109E62BE271D7C /* Pods-cocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocoa/Pods-cocoa.release.xcconfig"; sourceTree = "<group>"; };
+		3F375FB42012804300DE9D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localization.strings; sourceTree = "<group>"; };
+		3F375FB62012816600DE9D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		3FC910432012395C0030AA12 /* cocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC910462012395C0030AA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC910482012395C0030AA12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 				3FC9104F2012395C0030AA12 /* LaunchScreen.storyboard */,
 				3FC910522012395C0030AA12 /* Info.plist */,
 				3FC9105820123F740030AA12 /* MessageTableViewCell.swift */,
+				3F375FB52012804300DE9D16 /* Localization.strings */,
 			);
 			path = cocoa;
 			sourceTree = "<group>";
@@ -160,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC910512012395C0030AA12 /* LaunchScreen.storyboard in Resources */,
+				3F375FB32012804300DE9D16 /* Localization.strings in Resources */,
 				3FC9104E2012395C0030AA12 /* Assets.xcassets in Resources */,
 				3FC9104C2012395C0030AA12 /* Main.storyboard in Resources */,
 			);
@@ -231,6 +236,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3F375FB52012804300DE9D16 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F375FB42012804300DE9D16 /* Base */,
+				3F375FB62012816600DE9D16 /* en */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		3FC9104A2012395C0030AA12 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -386,6 +400,7 @@
 				3FC910572012395C0030AA12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Messages-->
+        <!--CocoMessages-->
         <scene sceneID="SLu-iT-goq">
             <objects>
                 <tableViewController id="La4-nC-RxU" customClass="MessageTableViewController" customModule="cocoa" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="La4-nC-RxU" id="M5r-0C-pRb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Messages" id="kCq-5S-8fh">
+                    <navigationItem key="navigationItem" title="CocoMessages" id="kCq-5S-8fh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="u5S-C5-9cO">
                             <connections>
                                 <action selector="addMessage:" destination="La4-nC-RxU" id="GSn-AV-6oc"/>
